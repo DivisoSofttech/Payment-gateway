@@ -98,6 +98,11 @@
     </dependencyManagement>
 
     <dependencies>
+    <dependency>
+			<groupId>com.paypal.sdk</groupId>
+			<artifactId>rest-api-sdk</artifactId>
+			<version>1.4.2</version>
+		</dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
@@ -276,6 +281,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-security</artifactId>
+   
+</dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -656,6 +666,36 @@
                                     <action>
                                         <ignore/>
                                     </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                	<pluginExecutionFilter>
+                                		<groupId>io.swagger</groupId>
+                                		<artifactId>
+                                			swagger-codegen-maven-plugin
+                                		</artifactId>
+                                		<versionRange>
+                                			[2.2.3,)
+                                		</versionRange>
+                                		<goals>
+                                			<goal>generate</goal>
+                                		</goals>
+                                	</pluginExecutionFilter>
+                                	<action>
+                                		<ignore></ignore>
+                                	</action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                	<pluginExecutionFilter>
+                                		<groupId></groupId>
+                                		<artifactId></artifactId>
+                                		<versionRange>[,)</versionRange>
+                                		<goals>
+                                			<goal></goal>
+                                		</goals>
+                                	</pluginExecutionFilter>
+                                	<action>
+                                		<ignore></ignore>
+                                	</action>
                                 </pluginExecution>
                             </pluginExecutions>
                         </lifecycleMappingMetadata>

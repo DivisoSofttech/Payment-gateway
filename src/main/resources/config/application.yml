@@ -107,20 +107,27 @@ security:
         enabled: false
     oauth2:
         client:
-            access-token-uri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/token
-            user-authorization-uri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/auth
-            client-id: internal
-            client-secret: internal
+            access-token-uri: http://keycloak.graeshoppe.divisotech.com:8080/auth/realms/master/protocol/openid-connect/token
+            user-authorization-uri: http://keycloak.graeshoppe.divisotech.com:8080/auth/realms/master/protocol/openid-connect/auth
+            client-id: account
+            client-secret: cde0b2ba-3a98-47ad-926f-9ebe87db0b98
             authentication-scheme: header
             client-authentication-scheme: header
         resource:
             filter-order: 3
-            user-info-uri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/userinfo
-            token-info-uri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/token/introspect
+            user-info-uri: http://keycloak.graeshoppe.divisotech.com:8080/auth/realms/master/protocol/openid-connect/userinfo
+            token-info-uri: http://keycloak.graeshoppe.divisotech.com:8080/auth/realms/master/protocol/openid-connect/token/introspect
             prefer-token-info: false
             jwt:
-                key-uri: http://localhost:9080/auth/realms/jhipster
-
+                key-uri: http://keycloak.graeshoppe.divisotech.com:8080/auth/realms/master
+        paypal:
+            access-token-uri: https://api.sandbox.paypal.com/v1/oauth2/token 
+            client-id: AT-ve5Q8n8igYEs1o_kWoVNY2DLKCam50aILd3f61qhuweZdvAr-iPDw83vNWhLWpcITvR-rWsOmZDTt
+            client-secret: EA-uO36KmhIH6xdAWbRIuFKuONR2A9TAL3y8ZoOy3i9t6yZBtusW0RPZCreVlvf4rzNGqb4_vdl1Li2x
+            grantType: client_credentials
+            username: abilash.s@lxisoft.com
+            password: 58685685paypal
+        
 server:
     session:
         cookie:
