@@ -27,7 +27,7 @@ import java.util.Collection;
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 @EnableDiscoveryClient
-@EnableFeignClients
+
 public class PaymentApp {
 
     private static final Logger log = LoggerFactory.getLogger(PaymentApp.class);

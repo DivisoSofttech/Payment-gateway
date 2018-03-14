@@ -48,7 +48,13 @@ ribbon:
 # See https://github.com/spring-cloud/spring-cloud-netflix/issues/1330
 feign:
     hystrix:
-        enabled: true
+        enabled: false
+    command:
+        default:
+            execution:
+                isolation:
+                    startegy: SEMAPHORE
+                        
 
 hystrix:
     share-security-context: true
