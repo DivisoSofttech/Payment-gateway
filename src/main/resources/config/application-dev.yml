@@ -37,6 +37,15 @@ spring:
             enabled: false # we use gulp + BrowserSync for livereload
     jackson:
         serialization.indent_output: true
+    cloud:
+        stream:
+            kafka:
+                binder:
+                    brokers: keycloak.graeshoppe.divisotech.com:9092
+                    zk-nodes: keycloak.graeshoppe.divisotech.com:2181
+            bindings:
+                output:
+                    destination: payment-jhipster        
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/payment?useUnicode=true&characterEncoding=utf8&useSSL=false

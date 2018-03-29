@@ -98,6 +98,12 @@
     </dependencyManagement>
 
     <dependencies>
+     <dependency>
+        <!-- Required to use PATCH -->
+        <groupId>io.github.openfeign</groupId>
+        <artifactId>feign-httpclient</artifactId>
+        <!-- <version>${feign.version}</version> -->
+    </dependency>
     <dependency>
 			<groupId>com.paypal.sdk</groupId>
 			<artifactId>rest-api-sdk</artifactId>
@@ -107,6 +113,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
+        <dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
         <dependency>
             <groupId>io.github.jhipster</groupId>
             <artifactId>jhipster</artifactId>
@@ -286,6 +297,21 @@
     <artifactId>spring-cloud-security</artifactId>
    
 </dependency>
+<!-- Kafka support -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-test-support</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -386,6 +412,11 @@
                             <artifactId>hibernate-jpamodelgen</artifactId>
                             <version>${hibernate.version}</version>
                         </path>
+                             <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.18</version>
+            </path>
 
                     </annotationProcessorPaths>
                 </configuration>

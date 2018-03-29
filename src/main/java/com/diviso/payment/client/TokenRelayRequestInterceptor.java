@@ -4,8 +4,6 @@ import com.diviso.payment.security.oauth2.AuthorizationHeaderUtil;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 
 public class TokenRelayRequestInterceptor implements RequestInterceptor {
 
@@ -15,6 +13,7 @@ public class TokenRelayRequestInterceptor implements RequestInterceptor {
     public void apply(RequestTemplate template) {
         if (AuthorizationHeaderUtil.getAuthorizationHeader().isPresent()) {
             template.header(AUTHORIZATION, AuthorizationHeaderUtil.getAuthorizationHeader().get());
+            System.out.println(AuthorizationHeaderUtil.getAuthorizationHeader().get()+"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
         }
     }
 }
